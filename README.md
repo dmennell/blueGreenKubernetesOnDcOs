@@ -30,7 +30,8 @@ dcos:mesos:master:volume:role:slave_public/kubernetes-blue-role create
 dcos:mesos:master:framework:role:slave_public read
 dcos:mesos:agent:framework:role:slave_public read
 ```
-### Build "kubernetes-blue.json Deployment File
+### Build "kubernetes-blue.json" Deployment File
+```
 cat > kubernete-blue.json << 'EOF'
 {
   "service": {
@@ -92,6 +93,7 @@ cat > kubernete-blue.json << 'EOF'
   }
 }
 EOF
+```
 ### Deploy the "kubernetes-blue.json" Deployment File
 `dcos package install kubernetes --options=kubernetes-blue.json`
 ### Build "kubectl-blue-proxy.json" Deployment File
