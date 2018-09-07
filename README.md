@@ -6,7 +6,7 @@
 dcos security org service-accounts keypair private-key.pem public-key.pem
 dcos security org service-accounts create -p public-key.pem -d 'kubernetes-blue service account' kubernetes-blue
 dcos security secrets create-sa-secret private-key.pem kubernetes-blue kubernetes-blue/sa
-sleep 10
+sleep 5
 dcos:mesos:master:framework:role:kubernetes-blue-role create
 dcos:mesos:master:task:user:root create
 dcos:mesos:agent:task:user:root create
@@ -14,15 +14,15 @@ dcos:mesos:master:reservation:role:kubernetes-blue-role create
 dcos:mesos:master:reservation:principal:kubernetes-blue delete
 dcos:mesos:master:volume:role:kubernetes-blue-role create
 dcos:mesos:master:volume:principal:kubernetes-blue delete
-sleep 10
+sleep 5
 dcos:service:marathon:marathon:services:/ create
 dcos:service:marathon:marathon:services:/ delete
-sleep 10
+sleep 5
 dcos:secrets:default:/kubernetes-blue/* full
 dcos:secrets:list:default:/kubernetes-blue read
 dcos:adminrouter:ops:ca:rw full
 dcos:adminrouter:ops:ca:ro full
-sleep 10
+sleep 5
 dcos:mesos:master:framework:role:slave_public/kubernetes-blue-role create
 dcos:mesos:master:framework:role:slave_public/kubernetes-blue-role read
 dcos:mesos:master:reservation:role:slave_public/kubernetes-blue-role create
@@ -152,7 +152,7 @@ dcos kubernetes-blue kubeconfig \
 dcos security org service-accounts keypair private-key.pem public-key.pem
 dcos security org service-accounts create -p public-key.pem -d 'kubernetes-green service account' kubernetes-green
 dcos security secrets create-sa-secret private-key.pem kubernetes-green kubernetes-green/sa
-sleep 10
+sleep 5
 dcos:mesos:master:framework:role:kubernetes-green-role create
 dcos:mesos:master:task:user:root create
 dcos:mesos:agent:task:user:root create
@@ -160,15 +160,15 @@ dcos:mesos:master:reservation:role:kubernetes-green-role create
 dcos:mesos:master:reservation:principal:kubernetes-green delete
 dcos:mesos:master:volume:role:kubernetes-green-role create
 dcos:mesos:master:volume:principal:kubernetes-green delete
-sleep 10
+sleep 5
 dcos:service:marathon:marathon:services:/ create
 dcos:service:marathon:marathon:services:/ delete
-sleep10
+sleep 5
 dcos:secrets:default:/kubernetes-green/* full
 dcos:secrets:list:default:/kubernetes-green read
 dcos:adminrouter:ops:ca:rw full
 dcos:adminrouter:ops:ca:ro full
-sleep 10
+sleep 5
 dcos:mesos:master:framework:role:slave_public/kubernetes-green-role create
 dcos:mesos:master:framework:role:slave_public/kubernetes-green-role read
 dcos:mesos:master:reservation:role:slave_public/kubernetes-green-role create
