@@ -3,9 +3,7 @@
 Blue Green Deployment Steps
 
 
-# Cluster URL:
-standingby.ishmaelsolutions.com
-honeybadger/dontcare
+
 
 # Prep Cluster
 
