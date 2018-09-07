@@ -177,6 +177,7 @@ dcos:mesos:master:framework:role:slave_public read
 dcos:mesos:agent:framework:role:slave_public read
 ```
 ### Create "kubernetes-green.json" Deployment File
+```
 cat > kubernetes-green.json << 'EOF'
 {
   "service": {
@@ -238,6 +239,7 @@ cat > kubernetes-green.json << 'EOF'
   }
 }
 EOF
+```
 ### "Deploy kubernetes-green.json Deployment File"
 `dcos package install kubernetes --options=kubernetes-green.json`
 ### Build "kubectl-green-proxy.json" Deployment File
