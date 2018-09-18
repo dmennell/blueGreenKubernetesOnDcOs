@@ -1,5 +1,13 @@
 # Deploy nearly identical Blue/Green Kubernetes Environments on Mesosphere Enterprise DC/OS
 
+## Setup Environment
+### Install CLI tools on Local System or Bastion Host
+
+
+### Install Enterprise-CLI Tools on local or Bastion Host
+`dcos package install dcos-enterprise-cli`
+
+
 ## Deploy "kubernetes-blue" Services
 ### Create "kubernetes-blue Service Account & Permissions
 ```
